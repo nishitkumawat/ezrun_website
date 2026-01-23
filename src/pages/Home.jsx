@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-0 pb-10 min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-black to-black">
       {/* Mobile App Download Banner */}
-      <section className="bg-primary/10 py-6 md:hidden">
+      <section className="bg-primary/10 py-6 md:hidden mb-10">
         <div className="container mx-auto px-4 flex flex-col items-center text-center gap-4">
             <h2 className="text-xl font-bold text-primary">Get the EzRun App</h2>
              <InteractiveHoverButton 
