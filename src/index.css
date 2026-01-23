@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fb8c00;
+  --color-primary-foreground: #ffffff;
+  --color-border: hsl(var(--border) / <alpha-value>);
+  --color-background: hsl(var(--background) / <alpha-value>);
+  --color-foreground: hsl(var(--foreground) / <alpha-value>);
+  --color-muted: hsl(var(--muted) / <alpha-value>);
+  --color-muted-foreground: hsl(var(--muted-foreground) / <alpha-value>);
+  --color-accent: hsl(var(--accent) / <alpha-value>);
+  --color-accent-foreground: hsl(var(--accent-foreground) / <alpha-value>);
+  --color-card: hsl(var(--card) / <alpha-value>);
+  --color-card-foreground: hsl(var(--card-foreground) / <alpha-value>);
+}
+
+:root {
+  /* Force dark mode colors by default */
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 33 100% 49%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 33 100% 49%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
