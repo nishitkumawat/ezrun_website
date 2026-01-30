@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
-import { Sun, Droplets, Zap, ShieldCheck, Wifi, Globe, MessageSquare } from 'lucide-react';
+import { Sun, Droplets, Zap, ShieldCheck, Wifi, Globe, MessageSquare, Layout } from 'lucide-react';
 
 const SolarProduct = () => {
   const whatsappMsg = encodeURIComponent("I am interested in the AI Based Solar monitoring and washing system. Please provide more details.");
@@ -53,7 +53,7 @@ const SolarProduct = () => {
           <img 
             src="/assets/solar.png" 
             alt="AI Solar System" 
-            className="relative rounded-3xl border shadow-2xl w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            className="relative rounded-3xl border shadow-2xl w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>
       </section>
@@ -113,6 +113,26 @@ const SolarProduct = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* App Interface Gallery */}
+      <section className="bg-muted/30 py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3">
+            <Layout className="w-8 h-8 text-primary" /> Smart Washing Interface
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center items-center">
+             {[1, 2, 3].map((num) => (
+               <div key={num} className="relative group rounded-[2.5rem] overflow-hidden border-8 border-gray-900 shadow-2xl bg-black max-w-[300px]">
+                  <img 
+                    src={num === 2 ? "/assets/wash2.jpeg" : num === 3 ? "/assets/wash_3.jpeg" : "/assets/wash_1.jpeg"}
+                    alt={`EzRun Solar App Interface ${num}`}
+                    className="w-full h-auto object-cover"
+                  />
+               </div>
+             ))}
+          </div>
         </div>
       </section>
 

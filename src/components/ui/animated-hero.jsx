@@ -71,7 +71,7 @@ function Hero() {
           <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse" />
             <img 
-               src="/assets/shutter.png" 
+               src="/assets/solar_sprinkler_realistic.png" 
                alt="EzRun Automation" 
                className="relative w-full max-w-sm md:max-w-md lg:max-w-lg object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-3xl"
             />

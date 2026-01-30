@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Shutter Controller', path: '/product/shutter' },
     { name: 'Solar Monitoring', path: '/product/solar' },
+    { name: 'Solar Washing', path: '/product/solar-wash-controller' },
     { name: 'Contact', path: '/contact' },
   ];
 

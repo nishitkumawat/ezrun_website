@@ -2,7 +2,7 @@ import React from 'react';
 import { Hero } from '@/components/ui/animated-hero';
 import { BentoCard } from '@/components/ui/bento-grid';
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
-import { Sun, Zap, CheckCircle } from 'lucide-react';
+import { Sun, Zap, CheckCircle, Droplets } from 'lucide-react';
 
 const features = [
   {
@@ -11,7 +11,16 @@ const features = [
     description: "Secure, PIN and mobile-controlled operation for industrial and home rolling shutters.",
     href: "/product/shutter",
     cta: "View Details",
-    background: <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent" />,
+    background: (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent z-0" />
+        <img 
+          src="/assets/shutter_transparent.png" 
+          
+          className="absolute -right-4 -bottom-4 h-48 w-auto object-contain opacity-40 grayscale-[20%] z-10" 
+        />
+      </>
+    ),
     className: "h-auto min-h-[22rem] md:h-[24rem]",
   },
   {
@@ -20,8 +29,35 @@ const features = [
     description: "AI-based tracking and automatic washing system to maximize your solar efficiency.",
     href: "/product/solar",
     cta: "View Details",
-    background: <div className="absolute inset-0 bg-gradient-to-bl from-primary/20 via-primary/5 to-transparent" />,
+    background: (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-bl from-primary/20 via-primary/5 to-transparent z-0" />
+        <img 
+          src="/assets/solar_transparent.png" 
+          
+          className="absolute -right-4 -bottom-4 h-48 w-auto object-contain opacity-40 grayscale-[20%] z-10" 
+        />
+      </>
+    ),
     className: "h-auto min-h-[22rem] md:h-[24rem]",
+  },
+  {
+    Icon: Droplets,
+    name: "Smart Solar Wash Controller",
+    description: "Automatic solar panel cleaning system to improve efficiency and reduce manual effort without internet.",
+    href: "/product/solar-wash-controller",
+    cta: "View Details",
+    background: (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-primary/5 to-transparent z-0" />
+        <img 
+          src="/assets/solar_wash_controller.png" 
+          
+          className="absolute -right-8 -bottom-8 h-56 w-auto object-contain opacity-30 grayscale-[20%] z-10" 
+        />
+      </>
+    ),
+    className: "h-auto min-h-[22rem] md:h-[24rem] md:col-span-2 lg:col-span-1",
   },
 ];
 
