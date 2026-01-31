@@ -38,7 +38,7 @@ const SolarWashController = () => {
             />
             <InteractiveHoverButton text="Download Manual" className="h-14 w-52" />
           </div>
-          <p className="text-2xl font-bold">Price: ₹ 1500 per unit <span className="text-sm font-normal text-muted-foreground">(Negotiable for bulk orders)</span></p>
+          <p className="text-2xl font-bold">Price: ₹ 2000 per unit <span className="text-sm font-normal text-muted-foreground">(Negotiable for bulk orders)</span></p>
         </div>
         <div className="relative group">
           <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl group-hover:bg-primary/30 transition-all duration-500" />

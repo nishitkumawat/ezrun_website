@@ -23,24 +23,24 @@ const features = [
     ),
     className: "h-auto min-h-[22rem] md:h-[24rem]",
   },
-  {
-    Icon: Sun,
-    name: "Solar Monitoring & Washing",
-    description: "AI-based tracking and automatic washing system to maximize your solar efficiency.",
-    href: "/product/solar",
-    cta: "View Details",
-    background: (
-      <>
-        <div className="absolute inset-0 bg-gradient-to-bl from-primary/20 via-primary/5 to-transparent z-0" />
-        <img 
-          src="/assets/solar_transparent.png" 
+  // {
+  //   Icon: Sun,
+  //   name: "Solar Monitoring & Washing",
+  //   description: "AI-based tracking and automatic washing system to maximize your solar efficiency.",
+  //   href: "/product/solar",
+  //   cta: "View Details",
+  //   background: (
+  //     <>
+  //       <div className="absolute inset-0 bg-gradient-to-bl from-primary/20 via-primary/5 to-transparent z-0" />
+  //       <img 
+  //         src="/assets/solar_transparent.png" 
           
-          className="absolute -right-4 -bottom-4 h-48 w-auto object-contain opacity-40 grayscale-[20%] z-10" 
-        />
-      </>
-    ),
-    className: "h-auto min-h-[22rem] md:h-[24rem]",
-  },
+  //         className="absolute -right-4 -bottom-4 h-48 w-auto object-contain opacity-40 grayscale-[20%] z-10" 
+  //       />
+  //     </>
+  //   ),
+  //   className: "h-auto min-h-[22rem] md:h-[24rem]",
+  // },
   {
     Icon: Droplets,
     name: "Smart Solar Wash Controller",
