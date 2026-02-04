@@ -307,19 +307,17 @@ export default function SolarWashManual() {
             </div>
             
             <div className="mb-6">
-              <h3 className="text-xl font-medium mb-3 text-amber-700">⚠️ AC Pumps (Limited Use Only)</h3>
+              <h3 className="text-xl font-medium mb-3 text-green-700">✅ AC Pumps</h3>
               <p className="mb-2 text-black">Allowed only for small, low-power pumps:</p>
               <ul className="list-disc pl-6 mb-4 space-y-1 text-black">
                 <li>Fountain pumps</li>
                 <li>Aquarium / circulation pumps</li>
-                <li>Small RO booster pumps</li>
+                <li>RO booster pumps</li>
               </ul>
               
               <h4 className="font-semibold mb-2 text-black">Electrical Limits</h4>
               <ul className="list-disc pl-6 mb-4 space-y-1 text-black">
                 <li>Voltage: 230V AC</li>
-                <li>Power: Maximum 100W</li>
-                <li>No HP rating</li>
               </ul>
             </div>
           </section>
