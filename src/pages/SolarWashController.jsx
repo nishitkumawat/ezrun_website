@@ -73,7 +73,7 @@ const SolarWashController = () => {
               className="h-14 w-60"
             />
             <InteractiveHoverButton
-              text="Download Manual"
+              text="More Details"
               className="h-14 w-52"
               onClick={() => window.location.href = '/product/solar-wash-controller/manual'}
             />
