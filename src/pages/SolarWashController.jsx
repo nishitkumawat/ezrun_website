@@ -79,7 +79,7 @@ const SolarWashController = () => {
             />
           </div>
           <p className="text-2xl font-bold">
-            Price: ₹ 2000 per unit{" "}
+            Price: ₹ 2199 per unit{" "}
             <span className="text-sm font-normal text-muted-foreground">
               (Negotiable for bulk orders)
             </span>
