@@ -313,6 +313,9 @@ I agree to the terms and conditions.`;
               </label>
             ))}
           </div>
+          <p className="text-xs text-slate-400 italic pl-1 pt-2">
+            * App customization may charge upto ₹5000 (If too much customization is done)
+          </p>
         </div>
 
         {/* Extra Requirements */}
