@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Zap,
   Shield,
@@ -10,13 +11,377 @@ import {
   Star,
   CheckCircle,
   ChevronDown,
-  Menu,
-  X,
+  Plus,
+  Trash2,
+  AlertCircle,
+  Check,
 } from "lucide-react";
+
+const CustomBuildForm = () => {
+  const [formData, setFormData] = useState({
+    machineName: "",
+    powerType: "", // AC or DC
+    ratingI: "",
+    ratingV: "",
+    ratingW: "",
+    keypadLock: false,
+    boxType: "Normal", // Normal or Waterproof
+    buttons: [],
+    platform: "EZRUN", // EZRUN, Own App, Own App (Managed), Own App (Own Server)
+    extraRequirements: "",
+    machineLink: "",
+    agreedToTerms: false,
+  });
+
+  const [newButton, setNewButton] = useState({ name: "", working: "" });
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleAddButton = () => {
+    if (newButton.name && newButton.working) {
+      setFormData((prev) => ({
+        ...prev,
+        buttons: [...prev.buttons, newButton],
+      }));
+      setNewButton({ name: "", working: "" });
+    }
+  };
+
+  const handleRemoveButton = (index) => {
+    setFormData((prev) => ({
+      ...prev,
+      buttons: prev.buttons.filter((_, i) => i !== index),
+    }));
+  };
+
+  const handleWhatsApp = () => {
+    if (!formData.machineName || !formData.powerType || !formData.ratingI || !formData.ratingV || !formData.agreedToTerms) {
+      alert("Please fill all required fields and agree to the terms.");
+      return;
+    }
+
+    const message = `*CUSTOM BUILD INQUIRY*
+
+*Machine Name:* ${formData.machineName}
+*Machine Link:* ${formData.machineLink || "NA"}
+*Power Type:* ${formData.powerType}
+*Ratings:*
+  - Current (I): ${formData.ratingI} A
+  - Voltage (V): ${formData.ratingV} V
+  - Power (W): ${formData.ratingW || "NA"}
+
+*Hardware Features:*
+  - Keypad Lock: ${formData.keypadLock ? "Yes" : "No"}
+  - Box Type: ${formData.boxType}
+
+*Buttons Configuration:*
+${formData.buttons.map((b, i) => `  ${i + 1}. ${b.name} - ${b.working}`).join("\n") || "  None"}
+
+*Platform Selected:*
+  - ${formData.platform}
+
+*Extra Requirements:*
+${formData.extraRequirements || "None"}
+
+I agree to the terms and conditions.`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919974486076?text=${encodedMessage}`, "_blank");
+  };
+
+  return (
+    <div className="bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-white/10 shadow-xl max-w-3xl mx-auto">
+      <h3 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        Build Your Custom Device
+      </h3>
+
+      <div className="space-y-6">
+        {/* Machine Details */}
+        <div className="space-y-4">
+          <h4 className="text-lg font-semibold text-blue-400 flex items-center gap-2">
+            <Zap className="w-5 h-5" /> Basic Machine Details
+          </h4>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <label className="text-sm text-slate-400">Type / Name of Machine *</label>
+              <input
+                type="text"
+                name="machineName"
+                value={formData.machineName}
+                onChange={handleInputChange}
+                className="w-full bg-slate-800 border border-white/10 rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Ex: Industrial Pump"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm text-slate-400">Machine Link (Optional)</label>
+              <input
+                type="text"
+                name="machineLink"
+                value={formData.machineLink}
+                onChange={handleInputChange}
+                className="w-full bg-slate-800 border border-white/10 rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Paste link for reference"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm text-slate-400">Power Type *</label>
+              <div className="flex gap-4 pt-2">
+                {["AC", "DC"].map((type) => (
+                  <label key={type} className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="powerType"
+                      value={type}
+                      checked={formData.powerType === type}
+                      onChange={handleInputChange}
+                      className="accent-blue-500 w-5 h-5"
+                    />
+                    {type}
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4">
+            <div className="space-y-2">
+              <label className="text-sm text-slate-400">Current (I) *</label>
+              <input
+                type="text"
+                name="ratingI"
+                value={formData.ratingI}
+                onChange={handleInputChange}
+                className="w-full bg-slate-800 border border-white/10 rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Amps"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm text-slate-400">Voltage (V) *</label>
+              <input
+                type="text"
+                name="ratingV"
+                value={formData.ratingV}
+                onChange={handleInputChange}
+                className="w-full bg-slate-800 border border-white/10 rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Volts"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm text-slate-400">Power (W)</label>
+              <input
+                type="text"
+                name="ratingW"
+                value={formData.ratingW}
+                onChange={handleInputChange}
+                className="w-full bg-slate-800 border border-white/10 rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Optional"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Hardware Features */}
+        <div className="space-y-4 pt-4 border-t border-white/10">
+          <h4 className="text-lg font-semibold text-blue-400 flex items-center gap-2">
+            <Shield className="w-5 h-5" /> Optional Hardware Features
+          </h4>
+          
+          <div className="space-y-3">
+            <label className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg cursor-pointer hover:bg-slate-800 transition">
+              <input
+                type="checkbox"
+                name="keypadLock"
+                checked={formData.keypadLock}
+                onChange={handleInputChange}
+                className="mt-1 accent-blue-500 w-5 h-5"
+              />
+              <div>
+                <span className="font-semibold block">Keypad Lock System (+ ₹100)</span>
+                <span className="text-xs text-slate-400">Device physically locked until password entered. Mobile control remains active.</span>
+              </div>
+            </label>
+
+            <div className="grid md:grid-cols-2 gap-3">
+              <label className="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg cursor-pointer hover:bg-slate-800 transition">
+                <input
+                  type="radio"
+                  name="boxType"
+                  value="Normal"
+                  checked={formData.boxType === "Normal"}
+                  onChange={handleInputChange}
+                  className="accent-blue-500 w-5 h-5"
+                />
+                <span>Normal Box</span>
+              </label>
+              <label className="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg cursor-pointer hover:bg-slate-800 transition">
+                <input
+                  type="radio"
+                  name="boxType"
+                  value="Waterproof"
+                  checked={formData.boxType === "Waterproof"}
+                  onChange={handleInputChange}
+                  className="accent-blue-500 w-5 h-5"
+                />
+                <span>Waterproof Box (+ ₹200)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        {/* Buttons Configuration */}
+        <div className="space-y-4 pt-4 border-t border-white/10">
+          <h4 className="text-lg font-semibold text-blue-400 flex items-center gap-2">
+            <CheckCircle className="w-5 h-5" /> Buttons Required
+          </h4>
+          
+          <div className="flex gap-2">
+            <input
+              type="text"
+              placeholder="Button Name (e.g. Start)"
+              value={newButton.name}
+              onChange={(e) => setNewButton({ ...newButton, name: e.target.value })}
+              className="flex-1 bg-slate-800 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+            <input
+              type="text"
+              placeholder="Working (e.g. Starts motor)"
+              value={newButton.working}
+              onChange={(e) => setNewButton({ ...newButton, working: e.target.value })}
+              className="flex-1 bg-slate-800 border border-white/10 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+            <button
+              onClick={handleAddButton}
+              className="bg-blue-600 hover:bg-blue-700 p-3 rounded-lg transition"
+            >
+              <Plus className="w-5 h-5" />
+            </button>
+          </div>
+
+          <div className="space-y-2">
+            {formData.buttons.map((btn, idx) => (
+              <div key={idx} className="flex justify-between items-center bg-slate-800/80 p-3 rounded-lg border border-white/5">
+                <span className="text-sm">
+                  <strong>{btn.name}:</strong> {btn.working}
+                </span>
+                <button
+                  onClick={() => handleRemoveButton(idx)}
+                  className="text-red-400 hover:text-red-300"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Platform Selection */}
+        <div className="space-y-4 pt-4 border-t border-white/10">
+          <h4 className="text-lg font-semibold text-blue-400 flex items-center gap-2">
+            <Wifi className="w-5 h-5" /> Platform Selection
+          </h4>
+          
+          <div className="space-y-3">
+            {[
+              { value: "EZRUN", label: "EZRUN Platform (Default)", price: "Included" },
+              { value: "Own App", label: "Your Own App", price: "+ ₹20,000 / year" },
+              { value: "Own App (Managed)", label: "Your App on Our Cloud Server", price: "+ ₹65,000 / year" },
+              { value: "Own App (Own Server)", label: "Your App on Your Cloud Server", price: "+ ₹25,000 / year" },
+            ].map((option) => (
+              <label key={option.value} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg cursor-pointer hover:bg-slate-800 transition border border-transparent hover:border-blue-500/30">
+                <div className="flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="platform"
+                    value={option.value}
+                    checked={formData.platform === option.value}
+                    onChange={handleInputChange}
+                    className="accent-blue-500 w-5 h-5"
+                  />
+                  <span>{option.label}</span>
+                </div>
+                <span className="text-sm font-semibold text-blue-300">{option.price}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Extra Requirements */}
+        <div className="space-y-2 pt-4 border-t border-white/10">
+          <label className="text-sm text-slate-400">Extra Requirements</label>
+          <textarea
+            name="extraRequirements"
+            value={formData.extraRequirements}
+            onChange={handleInputChange}
+            rows="3"
+            className="w-full bg-slate-800 border border-white/10 rounded-lg p-3 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+            placeholder="Any custom logic, sensors, integrations, limits..."
+          ></textarea>
+        </div>
+
+        {/* Important Info & Service Policy */}
+        <div className="bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg space-y-4">
+          <div>
+            <h5 className="flex items-center gap-2 font-bold text-blue-400 mb-2">
+              <AlertCircle className="w-4 h-4" /> Important Information
+            </h5>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-slate-300">
+              <li>Minimum <strong>20-25 pieces</strong> bulk order required for custom build.</li>
+              <li>Chargeable demo model provided before bulk order (Non-refundable).</li>
+              <li>Demo model is for testing only - not final product quality.</li>
+              <li>Opening enclosure may damage demo unit.</li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="flex items-center gap-2 font-bold text-orange-400 mb-2">
+              <Clock className="w-4 h-4" /> Service Policy
+            </h5>
+            <p className="text-sm text-slate-300">
+              If hardware purchases stop, included services continue for a <strong>3-month grace period</strong> only. 
+              After that, a yearly subscription is mandatory to keep devices online.
+            </p>
+          </div>
+        </div>
+
+        {/* Terms & Submit */}
+        <div className="pt-4 space-y-6">
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="agreedToTerms"
+              checked={formData.agreedToTerms}
+              onChange={handleInputChange}
+              className="accent-green-500 w-5 h-5 rounded"
+            />
+            <span className="text-sm text-slate-300">
+              I agree to the <Link to="/legal/custom-build-terms" target="_blank" className="text-blue-400 hover:underline">Terms & Conditions</Link> *
+            </span>
+          </label>
+
+          <button
+            onClick={handleWhatsApp}
+            className="w-full bg-green-600 hover:bg-green-700 py-4 rounded-xl flex items-center justify-center gap-3 font-bold text-lg transition-all hover:scale-[1.02] shadow-lg shadow-green-900/20"
+          >
+            <MessageCircle className="w-6 h-6" />
+            Send Inquiry via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const IoTLandingPage = () => {
   const [openFaq, setOpenFaq] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const products = [
     {
@@ -142,7 +507,7 @@ const IoTLandingPage = () => {
       q: "Do you provide warranty and support?",
       a: "Yes, all our devices come with a warranty and we provide ongoing technical support to ensure smooth operation.",
     },
-  ];
+    ];
 
   const features = [
     {
@@ -171,16 +536,13 @@ const IoTLandingPage = () => {
 
   const handleWhatsApp = () => {
     window.open(
-      "https://wa.me/919104513411?text=Hi, I would like to know more about your IoT solutions",
+      "https://wa.me/919974486076?text=Hi, I would like to know more about your IoT solutions",
       "_blank",
     );
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      {/* Navigation */}
-      
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
@@ -196,24 +558,40 @@ const IoTLandingPage = () => {
             We convert your thoughts into real products. Tell us your
             requirements and get a solution within 24 hours!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
-              onClick={handleWhatsApp}
-              className="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-green-500/50"
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <a
+              href="#build-form"
+              className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-lg font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/20"
             >
-              <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              Send Requirements on WhatsApp
-            </button>
+              Start Building Now
+            </a>
             <a
               href="#products"
-              className="px-8 py-4 rounded-full border-2 border-blue-500 hover:bg-blue-500/20 text-lg font-semibold transition-all hover:scale-105"
+              className="px-8 py-4 rounded-full border-2 border-white/10 hover:bg-white/5 text-lg font-semibold transition-all hover:scale-105"
             >
               View Products
             </a>
           </div>
+
           <p className="mt-6 text-sm text-slate-400">
             ⚡ We respond within 24 hours • 🔒 100% Secure • 💰 Best Prices
           </p>
+        </div>
+      </section>
+
+      {/* Custom Build Form Section */}
+      <section id="build-form" className="py-20 px-4 bg-slate-950/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Turn Your Machines Smart
+            </h2>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+              Fill out the details below to get a custom quote for your machine automation
+            </p>
+          </div>
+          <CustomBuildForm />
         </div>
       </section>
 
@@ -279,36 +657,10 @@ const IoTLandingPage = () => {
                       </div>
                     ))}
                   </div>
-                  {/* <button 
-                    onClick={handleWhatsApp}
-                    className="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold transition-all hover:scale-105"
-                  >
-                    Get Quote
-                  </button> */}
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Custom Solution CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Need a Custom Solution?
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            We build custom IoT devices at the cheapest rates. Just tell us your
-            requirements and we'll convert your thoughts into real products!
-          </p>
-          {/* <button
-            onClick={handleWhatsApp}
-            className="group bg-white text-blue-600 hover:bg-slate-100 px-8 py-4 rounded-full flex items-center gap-3 text-lg font-bold mx-auto transition-all hover:scale-105 shadow-xl"
-          >
-            <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-            WhatsApp: +91 91045 13411
-          </button> */}
         </div>
       </section>
 
@@ -390,37 +742,14 @@ const IoTLandingPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      {/* <footer className="py-12 px-4 border-t border-white/10">
-        <div className="container mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Zap className="w-8 h-8 text-blue-500" />
-            <span className="text-2xl font-bold">Custom IoT Solutions</span>
-          </div>
-          <p className="text-slate-400 mb-6">
-            Converting your thoughts into real products since day one
-          </p>
-          <button
-            onClick={handleWhatsApp}
-            className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full flex items-center gap-2 mx-auto transition-all hover:scale-105"
-          >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp: +91 91045 13411
-          </button>
-          <p className="text-xs text-slate-500 mt-8">
-            © 2024 Custom IoT Solutions. Made with ❤️ in India
-          </p>
-        </div>
-      </footer> */}
-
       {/* Floating WhatsApp Button */}
-      <button
+      {/* <button
         onClick={handleWhatsApp}
         className="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all z-50 animate-bounce"
         aria-label="Contact on WhatsApp"
       >
         <MessageCircle className="w-8 h-8" />
-      </button>
+      </button> */}
     </div>
   );
 };

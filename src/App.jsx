@@ -8,7 +8,7 @@ import SolarProduct from "./pages/SolarProduct";
 import SolarWashController from "./pages/SolarWashController";
 import SolarWashManual from "./pages/SolarWashManual";
 import Contact from "./pages/Contact";
-import { Terms, Privacy } from "./pages/Legal";
+import { Terms, Privacy, CustomBuildTerms } from "./pages/Legal";
 import IoTLandingPage from "./pages/IoTLandingPage";
 
 function App() {
@@ -31,6 +31,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route
+            path="/legal/custom-build-terms"
+            element={<CustomBuildTerms />}
+          />
           <Route path="/iot" element={<IoTLandingPage />} />
         </Routes>
       </Layout>
