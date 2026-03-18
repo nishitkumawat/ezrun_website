@@ -75,11 +75,13 @@ const SolarWashController = () => {
             <InteractiveHoverButton
               text="More Details"
               className="h-14 w-52"
-              onClick={() => window.location.href = '/product/solar-wash-controller/manual'}
+              onClick={() =>
+                (window.location.href = "/product/solar-wash-controller/manual")
+              }
             />
           </div>
           <p className="text-2xl font-bold">
-            Price: ₹ 2199 per unit{" "}
+            Price: ₹ 1,299 per unit{" "}
             <span className="text-sm font-normal text-muted-foreground">
               (Negotiable for bulk orders)
             </span>
