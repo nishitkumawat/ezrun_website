@@ -81,8 +81,7 @@ const SolarWashController = () => {
             />
           </div>
           <p className="text-2xl font-bold">
-            Price: ₹ 1,699 per unit{" "}
-            <br/>
+            Price: ₹ 1,699 per unit <br />
             <span className="text-sm font-normal text-muted-foreground">
               (Negotiable for bulk orders - ₹ 1,399)
             </span>
@@ -91,8 +90,9 @@ const SolarWashController = () => {
         <div className="relative group">
           <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl group-hover:bg-primary/30 transition-all duration-500" />
           <img
-            src="/assets/solar.png"
+            src="/assets/solar.jpeg"
             alt="Smart Solar Panel Wash Controller"
+            style={{ width: "450px", height: "auto" }}
             className="relative rounded-3xl border shadow-2xl w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>

@@ -66,8 +66,9 @@ const SolarProduct = () => {
         <div className="relative group">
           <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl group-hover:bg-primary/30 transition-all duration-500" />
           <img
-            src="/assets/solar.png"
+            src="/assets/solar.jpeg"
             alt="AI Solar System"
+            style={{ width: "450px", height: "auto" }}
             className="relative rounded-3xl border shadow-2xl w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>
