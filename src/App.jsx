@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import { Terms, Privacy, CustomBuildTerms } from "./pages/Legal";
 import IoTLandingPage from "./pages/IoTLandingPage";
 import AppDemo from "./pages/AppDemo";
+import ShutterAppDemo from "./pages/ShutterAppDemo";
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
             element={<CustomBuildTerms />}
           />
           <Route path="/iot" element={<IoTLandingPage />} />
-          <Route path="/app-demo" element={<AppDemo />} />
+          <Route path="/app-demo/solar" element={<AppDemo />} />
+          <Route path="/app-demo/shutter" element={<ShutterAppDemo />} />
         </Routes>
       </Layout>
     </Router>

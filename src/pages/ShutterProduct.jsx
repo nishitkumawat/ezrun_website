@@ -63,7 +63,7 @@ const ShutterProduct = () => {
               shutters. Experience the perfect blend of physical security and
               mobile convenience.
             </p>
-            <div className="bg-card border shadow-xl rounded-2xl p-6 max-w-[420px] mt-4 relative overflow-hidden group">
+            <div className="bg-card border shadow-xl rounded-2xl p-6 max-w-[420px] mt-4 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1.5 bg-primary h-full" />
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-bold text-muted-foreground tracking-widest uppercase">Direct Price</span>
@@ -74,15 +74,24 @@ const ShutterProduct = () => {
                 <span className="text-sm font-semibold text-muted-foreground">+ Taxes</span>
               </div>
               <p className="text-xs text-muted-foreground mb-6 font-medium">* Complete set with access points included.</p>
-              <div className="flex gap-3">
+              <div className="flex flex-col gap-3">
+                <div className="flex gap-3">
+                  <InteractiveHoverButton
+                    text="Send Inquiry"
+                    onClick={() => window.open(whatsappUrl, "_blank")}
+                    className="flex-1 bg-primary text-primary-foreground border-none font-semibold h-12 shadow-lg hover:shadow-primary/25"
+                  />
+                  <InteractiveHoverButton
+                    text="Manual"
+                    className="flex-1 bg-background text-foreground border shadow-sm font-semibold h-12 hover:bg-muted/50"
+                  />
+                </div>
                 <InteractiveHoverButton
-                  text="Send Inquiry"
-                  onClick={() => window.open(whatsappUrl, "_blank")}
-                  className="flex-1 bg-primary text-primary-foreground border-none font-semibold h-12 shadow-lg hover:shadow-primary/25"
-                />
-                <InteractiveHoverButton
-                  text="Manual"
-                  className="flex-1 bg-background text-foreground border shadow-sm font-semibold h-12 hover:bg-muted/50"
+                  text="Live App Demo"
+                  className="w-full bg-[#102A43] text-white border-none font-semibold h-12 shadow-md hover:bg-[#102a43]/90"
+                  onClick={() =>
+                    (window.location.href = "/app-demo/shutter")
+                  }
                 />
               </div>
             </div>
@@ -92,8 +101,8 @@ const ShutterProduct = () => {
               <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl group-hover:bg-primary/30 transition-all duration-500" />
               <img
                 src="/assets/shutter.png"
-                alt="Advanced Shutter Controller"
-                className="relative w-full max-w-[400px] h-auto object-contain mix-blend-multiply drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                alt="Shutter App"
+                className="relative w-full max-w-sm lg:max-w-md h-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] rounded-[2rem] border-[8px] border-white/60 shadow-xl"
               />
             </div>
           </div>

@@ -5,6 +5,7 @@ import { BackgroundPaths } from "@/components/ui/background-paths";
 import { BentoCard } from "@/components/ui/bento-grid";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Sun, Zap, CheckCircle, Droplets } from "lucide-react";
+import { color } from "framer-motion";
 
 const features = [
   {
@@ -15,8 +16,8 @@ const features = [
     href: "/product/shutter",
     cta: "View Details",
     background: (
-      <div className="absolute inset-0 flex justify-end items-end overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent z-0" />
+      <div className="absolute inset-0 flex justify-end items-end overflow-hidden" style={{ color: "white" }}>
+        <div className=" z-0" style={{ color: "white" }}/>
         {/* <img
           src="/assets/shutter_flat.png"
           className="relative w-full md:w-full h-auto object-contain mix-blend-multiply drop-shadow-xl z-10 translate-x-4 translate-y-4 hover:scale-105 transition-transform"
@@ -53,10 +54,6 @@ const features = [
     background: (
       <div className="absolute inset-0 flex justify-end items-end overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-primary/5 to-transparent z-0" />
-        {/* <img
-          src="/assets/solar_wash_clean.png"
-          className="relative w-48 md:w-64 h-auto object-contain mix-blend-multiply drop-shadow-xl z-10 translate-x-4 translate-y-4 hover:scale-105 transition-transform"
-        /> */}
       </div>
     ),
     className: "h-auto min-h-[22rem] md:h-[24rem] md:col-span-2 lg:col-span-1",

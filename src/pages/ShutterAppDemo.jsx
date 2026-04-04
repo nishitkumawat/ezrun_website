@@ -1,15 +1,15 @@
 import React from "react";
-import WashControlUI from "../components/demo/WashControlUI";
+import ShutterControlUI from "../components/demo/ShutterControlUI";
 import { BackgroundPaths } from "../components/ui/background-paths";
 
-export default function AppDemo() {
+export default function ShutterAppDemo() {
   return (
-    <div className="md:h-[calc(130vh-4rem)] h-[calc(100vh-4rem)] md:min-h-screen bg-background relative flex flex-col items-center justify-center md:py-20 lg:py-24">
+    <div className="h-[calc(100vh-4rem)] md:h-[calc(130vh-4rem)] md:min-h-screen bg-background relative flex flex-col items-center justify-center md:py-20 lg:py-24">
       <div className="hidden md:block">
         <BackgroundPaths />
       </div>
 
-      <div className="relative z-10 w-full h-full md:h-auto md:container md:mx-auto md:px-10  flex flex-col lg:flex-row items-center justify-center lg:gap-24">
+      <div className="relative z-10 w-full h-full md:h-auto md:container md:mx-auto md:px-8 flex flex-col lg:flex-row items-center justify-center lg:gap-24">
         {/* Left Text Block */}
         <div className="hidden lg:block max-w-xl text-left space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
@@ -17,12 +17,12 @@ export default function AppDemo() {
             Live Interactive Demo
           </div>
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-            Experience the <span className="text-primary">EzRun App</span>
+            Experience the <span className="text-primary">Shutter App</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Try our interactive demo to see how easy it is to control your solar
-            washing systems and shutters. Set smart schedules, monitor devices,
-            and automate your world right from your phone.
+            Try our interactive demo to see how simple it is to operate your
+            industrial and residential rolling shutters. Gain secure, reliable control
+            right from your phone.
           </p>
           <div className="pt-8">
             <p className="text-sm font-medium text-muted-foreground/60 italic">
@@ -53,8 +53,8 @@ export default function AppDemo() {
             <div className="hidden md:block absolute top-0 left-0 w-8 h-full bg-gradient-to-r from-white/10 to-transparent pointer-events-none z-20 rounded-l-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             
             {/* App Content */}
-            <div className="flex-1 w-full bg-[#F0F4F8] overflow-y-auto no-scrollbar relative font-sans">
-              <WashControlUI />
+            <div className="flex-1 w-full bg-[#F7F9FC] overflow-y-auto no-scrollbar relative font-sans">
+              <ShutterControlUI />
             </div>
 
             {/* Android Navigation Bar */}
