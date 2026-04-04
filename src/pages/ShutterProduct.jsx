@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 import {
   Smartphone,
   ShieldCheck,
@@ -46,43 +47,58 @@ const ShutterProduct = () => {
   ];
 
   return (
-    <div className="flex flex-col py-20 gap-20">
+    <div className="flex flex-col py-0 gap-0">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-            <ShieldCheck className="w-4 h-4" /> Best in Class Security
+      <BackgroundPaths>
+        <section className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-20 pt-10">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+              <ShieldCheck className="w-4 h-4" /> Best in Class Security
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              Advanced <span className="text-primary">Shutter</span> Controller
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              The ultimate solution for industrial and residential rolling
+              shutters. Experience the perfect blend of physical security and
+              mobile convenience.
+            </p>
+            <div className="bg-card border shadow-xl rounded-2xl p-6 max-w-[420px] mt-4 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-1.5 bg-primary h-full" />
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-xs font-bold text-muted-foreground tracking-widest uppercase">Direct Price</span>
+                <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold">Standard Device</span>
+              </div>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="text-4xl md:text-5xl font-black text-foreground tracking-tighter">₹3,000</span>
+                <span className="text-sm font-semibold text-muted-foreground">+ Taxes</span>
+              </div>
+              <p className="text-xs text-muted-foreground mb-6 font-medium">* Complete set with access points included.</p>
+              <div className="flex gap-3">
+                <InteractiveHoverButton
+                  text="Send Inquiry"
+                  onClick={() => window.open(whatsappUrl, "_blank")}
+                  className="flex-1 bg-primary text-primary-foreground border-none font-semibold h-12 shadow-lg hover:shadow-primary/25"
+                />
+                <InteractiveHoverButton
+                  text="Manual"
+                  className="flex-1 bg-background text-foreground border shadow-sm font-semibold h-12 hover:bg-muted/50"
+                />
+              </div>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Advanced <span className="text-primary">Shutter</span> Controller
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            The ultimate solution for industrial and residential rolling
-            shutters. Experience the perfect blend of physical security and
-            mobile convenience.
-          </p>
-          <div className="pt-4 flex flex-col sm:flex-row gap-4">
-            <InteractiveHoverButton
-              text="Send Inquiry"
-              onClick={() => window.open(whatsappUrl, "_blank")}
-              className="h-14 w-60"
-            />
-            <InteractiveHoverButton
-              text="Download Manual"
-              className="h-14 w-52"
-            />
+          <div className="flex justify-center lg:justify-end lg:pr-20 w-full">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl group-hover:bg-primary/30 transition-all duration-500" />
+              <img
+                src="/assets/shutter.png"
+                alt="Advanced Shutter Controller"
+                className="relative w-full max-w-[400px] h-auto object-contain mix-blend-multiply drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
           </div>
-          <p className="text-2xl font-bold">Price: ₹ 3000 + Taxes</p>
-        </div>
-        <div className="relative group">
-          <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl group-hover:bg-primary/30 transition-all duration-500" />
-          <img
-            src="/assets/shutter.png"
-            alt="Advanced Shutter Controller"
-            className="relative rounded-3xl border shadow-2xl w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-          />
-        </div>
-      </section>
+        </section>
+      </BackgroundPaths>
 
       {/* Technical Specifications */}
       <section className="bg-muted/30 py-20">
@@ -144,10 +160,10 @@ const ShutterProduct = () => {
         <h2 className="text-3xl font-bold mb-16 text-center">
           Why Choose EzRun?
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-center text-center p-4">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+            <div key={i} className="flex flex-col items-center text-center p-6 bg-card border shadow-sm rounded-2xl hover:shadow-md transition-shadow group">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 text-primary group-hover:-translate-y-1 transition-transform">
                 <f.icon className="w-8 h-8" />
               </div>
               <h4 className="font-bold mb-2">{f.title}</h4>

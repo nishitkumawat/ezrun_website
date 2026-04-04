@@ -74,13 +74,13 @@ function Hero() {
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse" />
+            <div className="relative flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full animate-pulse" />
             <img
-              src="/assets/solar_sprinkler_realistic.png"
-              alt="EzRun Automation"
-              className="relative w-full max-w-sm md:max-w-md lg:max-w-lg object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-3xl"
-              style={{ width: "450px", height: "auto" }}
+              src="/assets/iot_hero.png"
+              alt="EzRun Automation IoT"
+              className="relative w-full max-w-sm md:max-w-md rounded-lg lg:max-w-lg object-contain mix-blend-multiply drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+              style={{ width: "500px", height: "auto" }}
             />
           </div>
         </div>

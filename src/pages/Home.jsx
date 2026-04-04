@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Hero } from "@/components/ui/animated-hero";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 import { BentoCard } from "@/components/ui/bento-grid";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Sun, Zap, CheckCircle, Droplets } from "lucide-react";
@@ -14,13 +15,13 @@ const features = [
     href: "/product/shutter",
     cta: "View Details",
     background: (
-      <>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent z-0" />
-        <img
-          src="/assets/shutter_transparent.png"
-          className="absolute -right-4 -bottom-4 h-48 w-auto object-contain opacity-40 grayscale-[20%] z-10"
-        />
-      </>
+      <div className="absolute inset-0 flex justify-end items-end overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent z-0" />
+        {/* <img
+          src="/assets/shutter_flat.png"
+          className="relative w-full md:w-full h-auto object-contain mix-blend-multiply drop-shadow-xl z-10 translate-x-4 translate-y-4 hover:scale-105 transition-transform"
+        /> */}
+      </div>
     ),
     className: "h-auto min-h-[22rem] md:h-[24rem]",
   },
@@ -50,13 +51,13 @@ const features = [
     href: "/product/solar-wash-controller",
     cta: "View Details",
     background: (
-      <>
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-primary/5 to-transparent z-0" />
-        <img
-          src="/assets/solar_wash_controller.png"
-          className="absolute -right-8 -bottom-8 h-56 w-auto object-contain opacity-30 grayscale-[20%] z-10"
-        />
-      </>
+      <div className="absolute inset-0 flex justify-end items-end overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-primary/5 to-transparent z-0" />
+        {/* <img
+          src="/assets/solar_wash_clean.png"
+          className="relative w-48 md:w-64 h-auto object-contain mix-blend-multiply drop-shadow-xl z-10 translate-x-4 translate-y-4 hover:scale-105 transition-transform"
+        /> */}
+      </div>
     ),
     className: "h-auto min-h-[22rem] md:h-[24rem] md:col-span-2 lg:col-span-1",
   },
@@ -107,7 +108,7 @@ const faqs = [
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-0 pb-10 min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-black to-black">
+    <div className="flex flex-col gap-0 pb-10 min-h-screen bg-background text-foreground">
       {/* Mobile App Download Banner */}
       <section className="bg-primary/10 py-6 md:hidden mb-10">
         <div className="container mx-auto px-4 flex flex-col items-center text-center gap-4">
@@ -126,9 +127,9 @@ const Home = () => {
       </section>
 
       {/* Hero Section */}
-      <Hero />
-
-      {/* Products Grid */}
+      <BackgroundPaths>
+        <Hero />
+      </BackgroundPaths>
       <section id="products" className="container px-4 mt-16 md:mt-20 mb-10">
         <div className="flex flex-col items-center mb-8">
           <h2 className="text-2xl md:text-5xl font-bold text-center mb-3">
@@ -184,11 +185,8 @@ const Home = () => {
             </span>
             <div className="h-0.5 w-12 bg-primary" />
           </div>
-          <h2 className="text-5xl md:text-9xl font-black text-white/[0.05] uppercase tracking-tighter absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none whitespace-nowrap">
-            Bharat
-          </h2>
           <div className="relative z-10 flex flex-col items-center">
-            <p className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+            <p className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
               Made in <span className="text-primary">India</span>
             </p>
             <div className="flex flex-col items-center gap-1 mt-3">
@@ -241,7 +239,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-8 border-t border-white/5">
+      <section className="container mx-auto px-4 py-8 border-t border-border">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-8 text-center underline decoration-primary decoration-2 underline-offset-8">
             Frequently Asked Questions
@@ -252,7 +250,7 @@ const Home = () => {
                 key={i}
                 className="group border-b border-white/5 pb-4 last:border-0"
               >
-                <h3 className="text-base font-semibold mb-1 group-hover:text-primary transition-colors flex items-center gap-2 text-white/90">
+                <h3 className="text-base font-semibold mb-1 group-hover:text-primary transition-colors flex items-center gap-2 text-foreground/90">
                   <CheckCircle className="w-4 h-4 text-primary" /> {faq.q}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -263,7 +261,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-16 px-4 bg-gradient-to-r from-orange-400 to-primary text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Need a Custom Solution?
@@ -274,7 +272,7 @@ const Home = () => {
           </p>
           <button
             onClick={() => navigate("/iot")}
-            className="group bg-white text-blue-600 hover:bg-slate-100 px-8 py-4 rounded-full flex items-center gap-3 text-lg font-bold mx-auto transition-all hover:scale-105 shadow-xl"
+            className="group bg-white text-primary hover:bg-slate-100 px-8 py-4 rounded-full flex items-center gap-3 text-lg font-bold mx-auto transition-all hover:scale-105 shadow-xl"
           >
             Contact Now
           </button>
