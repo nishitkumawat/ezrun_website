@@ -58,10 +58,15 @@ const ShutterProduct = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               Advanced <span className="text-primary">Shutter</span> Controller
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              The ultimate solution for industrial and residential rolling
+            {/* Desktop Description */}
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed hidden md:block">
+              Secure, robust, and smart automation for your industrial and residential
               shutters. Experience the perfect blend of physical security and
               mobile convenience.
+            </p>
+            {/* Mobile Description */}
+            <p className="text-[17px] text-muted-foreground mb-8 max-w-xl leading-relaxed block md:hidden">
+              Secure & smart mobile automation for your rolling shutters.
             </p>
             <div className="bg-card border shadow-xl rounded-2xl p-6 max-w-[420px] mt-4 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1.5 bg-primary h-full" />

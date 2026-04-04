@@ -15,35 +15,9 @@ const features = [
       "Secure, PIN and mobile-controlled operation for industrial and home rolling shutters.",
     href: "/product/shutter",
     cta: "View Details",
-    background: (
-      <div className="absolute inset-0 flex justify-end items-end overflow-hidden" style={{ color: "white" }}>
-        <div className=" z-0" style={{ color: "white" }}/>
-        {/* <img
-          src="/assets/shutter_flat.png"
-          className="relative w-full md:w-full h-auto object-contain mix-blend-multiply drop-shadow-xl z-10 translate-x-4 translate-y-4 hover:scale-105 transition-transform"
-        /> */}
-      </div>
-    ),
-    className: "h-auto min-h-[22rem] md:h-[24rem]",
+    background: <div className="absolute inset-0 bg-white" />,
+    className: "h-auto min-h-[16rem] md:h-[24rem]",
   },
-  // {
-  //   Icon: Sun,
-  //   name: "Solar Monitoring & Washing",
-  //   description: "AI-based tracking and automatic washing system to maximize your solar efficiency.",
-  //   href: "/product/solar",
-  //   cta: "View Details",
-  //   background: (
-  //     <>
-  //       <div className="absolute inset-0 bg-gradient-to-bl from-primary/20 via-primary/5 to-transparent z-0" />
-  //       <img
-  //         src="/assets/solar_transparent.png"
-
-  //         className="absolute -right-4 -bottom-4 h-48 w-auto object-contain opacity-40 grayscale-[20%] z-10"
-  //       />
-  //     </>
-  //   ),
-  //   className: "h-auto min-h-[22rem] md:h-[24rem]",
-  // },
   {
     Icon: Droplets,
     name: "Smart Solar Wash Controller",
@@ -51,12 +25,8 @@ const features = [
       "Automatic solar panel cleaning system to improve efficiency and reduce manual effort without internet.",
     href: "/product/solar-wash-controller",
     cta: "View Details",
-    background: (
-      <div className="absolute inset-0 flex justify-end items-end overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-primary/5 to-transparent z-0" />
-      </div>
-    ),
-    className: "h-auto min-h-[22rem] md:h-[24rem] md:col-span-2 lg:col-span-1",
+    background: <div className="absolute inset-0 bg-white" />,
+    className: "h-auto min-h-[16rem] md:h-[24rem] md:col-span-2 lg:col-span-1",
   },
 ];
 

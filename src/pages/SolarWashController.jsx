@@ -62,11 +62,16 @@ const SolarWashController = () => {
               Smart <span className="text-primary">Solar Panel Wash</span>{" "}
               Controller
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              The Smart Solar Panel Wash Controller automatically cleans your
-              solar panels at the right time without manual effort. It helps keep
-              panels clean, improves electricity generation, and reduces the need
-              for regular human cleaning.
+            {/* Desktop Description */}
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed hidden md:block">
+              Automatic solar panel cleaning system designed to improve your solar
+              efficiency and reduce manual effort. Our state-of-the-art
+              automation ensures your solar panels remain spotlessly clean for
+              maximum generation.
+            </p>
+            {/* Mobile Description */}
+            <p className="text-[17px] text-muted-foreground mb-8 max-w-xl leading-relaxed block md:hidden">
+              Automatic solar panel cleaning to maximize efficiency with zero manual effort.
             </p>
             <div className="bg-card border shadow-xl rounded-2xl p-6 max-w-[420px] mt-4 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1.5 bg-primary h-full" />
