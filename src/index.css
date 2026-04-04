@@ -62,7 +62,6 @@
     font-weight: 700;
   }
   p {
-    color: hsl(var(--muted-foreground));
     line-height: 1.8;
   }
 }

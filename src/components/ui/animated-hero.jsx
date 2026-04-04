@@ -25,8 +25,8 @@ function Hero() {
     <div className="w-full">
       <div className="container mx-auto md:mt-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-4rem)] gap-8 pb-10 items-center">
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 lg:ml-12">
-            <h1 className="text-4xl md:text-7xl max-w-2xl tracking-tighter font-regular">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 lg:ml-12 px-6 md:px-0">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl max-w-2xl tracking-tighter font-regular">
               <span className="text-secondary-foreground/80">
                 EzRun Automation is
               </span>

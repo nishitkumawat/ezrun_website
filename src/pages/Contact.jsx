@@ -35,11 +35,11 @@ const Contact = () => {
 
   return (
     <div className="py-20 lg:py-32">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-16">
           {/* Header */}
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
               Get in <span className="text-primary">Touch</span>
             </h1>
             <p className="text-xl text-muted-foreground">

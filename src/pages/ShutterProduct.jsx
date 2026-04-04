@@ -50,12 +50,12 @@ const ShutterProduct = () => {
     <div className="flex flex-col py-0 gap-0">
       {/* Hero Section */}
       <BackgroundPaths>
-        <section className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-20 pt-10">
-          <div className="space-y-6">
+        <section className="container mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pb-10 pt-6 lg:pb-20 lg:pt-10">
+          <div className="space-y-4 lg:space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
               <ShieldCheck className="w-4 h-4" /> Best in Class Security
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               Advanced <span className="text-primary">Shutter</span> Controller
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">

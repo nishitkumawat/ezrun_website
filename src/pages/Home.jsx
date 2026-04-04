@@ -130,9 +130,9 @@ const Home = () => {
       <BackgroundPaths>
         <Hero />
       </BackgroundPaths>
-      <section id="products" className="container px-4 mt-16 md:mt-20 mb-10">
+      <section id="products" className="container px-6 md:px-8 mt-16 md:mt-20 mb-10 mx-auto">
         <div className="flex flex-col items-center mb-8">
-          <h2 className="text-2xl md:text-5xl font-bold text-center mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-center mb-3">
             Our Innovative Products
           </h2>
           <div className="w-16 h-1.5 bg-primary rounded-full mb-6" />
@@ -152,8 +152,8 @@ const Home = () => {
       {/* App Showcase Animation */}
       {/* App Showcase */}
       <section className="bg-muted/10 py-16 md:py-24 hidden md:block">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold leading-none text-primary mb-8">
+        <div className="container mx-auto px-6 md:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-none text-primary mb-8">
             EzRun App
           </h2>
           <div className="flex flex-col items-center gap-6">
@@ -185,8 +185,8 @@ const Home = () => {
             </span>
             <div className="h-0.5 w-12 bg-primary" />
           </div>
-          <div className="relative z-10 flex flex-col items-center">
-            <p className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
+          <div className="relative z-10 flex flex-col items-center px-6">
+            <p className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight text-center">
               Made in <span className="text-primary">India</span>
             </p>
             <div className="flex flex-col items-center gap-1 mt-3">
@@ -204,9 +204,9 @@ const Home = () => {
       </section>
 
       {/* Feedback Section */}
-      <section className="container mx-auto px-4 py-8">
+      <section className="container mx-auto px-6 md:px-8 py-8">
         <div className="flex flex-col items-center mb-8">
-          <h2 className="text-3xl font-bold text-center mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
             What Our Clients Say
           </h2>
           <p className="text-muted-foreground text-sm">
@@ -239,9 +239,9 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-8 border-t border-border">
+      <section className="container mx-auto px-6 md:px-8 py-8 border-t border-border">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 text-center underline decoration-primary decoration-2 underline-offset-8">
+          <h2 className="text-xl md:text-2xl font-bold mb-8 text-center underline decoration-primary decoration-2 underline-offset-8">
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
@@ -261,9 +261,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 px-4 bg-gradient-to-r from-orange-400 to-primary text-white">
+      <section className="py-16 px-6 md:px-8 bg-gradient-to-r from-orange-400 to-primary text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Need a Custom Solution?
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
