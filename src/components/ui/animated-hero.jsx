@@ -77,9 +77,9 @@ function Hero() {
             <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 rounded-full animate-pulse" />
             <img
-              src="/assets/iot_hero.png"
+              src="/assets/iotttttt.png"
               alt="EzRun Automation IoT"
-              className="relative w-full max-w-sm md:max-w-md rounded-lg lg:max-w-lg object-contain mix-blend-multiply drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+              className="relative w-full max-w-sm md:max-w-md rounded-lg lg:max-w-lg object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
               style={{ width: "500px", height: "auto" }}
             />
           </div>
