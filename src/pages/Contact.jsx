@@ -16,8 +16,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email Us",
-      value: "machmate.contact@gmail.com",
-      link: "mailto:machmate.contact@gmail.com",
+      value: "work@ezrun.in",
+      link: "mailto:work@ezrun.in",
     },
     {
       icon: MapPin,
