@@ -10,6 +10,8 @@ import {
   Linkedin,
 } from "lucide-react";
 
+import { products } from "../data/products";
+
 const Footer = () => {
   return (
     <footer className="border-t bg-muted/30 pt-10 pb-6">
@@ -71,18 +73,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/product/shutter"
+                  to="/products"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Shutter Controller
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/product/solar"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Solar Monitoring
+                  All Products
                 </Link>
               </li>
               <li>

@@ -4,31 +4,28 @@ import { Hero } from "@/components/ui/animated-hero";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { BentoCard } from "@/components/ui/bento-grid";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { Sun, Zap, CheckCircle, Droplets } from "lucide-react";
-import { color } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { products } from "../data/products";
 
-const features = [
-  {
-    Icon: Zap,
-    name: "Advanced Shutter Controller",
-    description:
-      "Secure, PIN and mobile-controlled operation for industrial and home rolling shutters.",
-    href: "/product/shutter",
+const features = products
+  .filter((p) => p.isActive)
+  .map((p) => ({
+    Icon: p.hero.badgeIcon,
+    name: p.id === "solar" ? "AI Solar Monitoring" : p.hero.titlePrimary + " " + p.hero.titleSecondary,
+    description: p.hero.descriptionMobile,
+    href: `/product/${p.id}`,
     cta: "View Details",
-    background: <div className="absolute inset-0 bg-white" />,
+    price: p.hero.priceAmount,
+    background: (
+      <img
+        src={p.hero.image}
+        alt={p.hero.titlePrimary}
+        className="absolute inset-0 object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+      />
+    ),
     className: "h-auto min-h-[16rem] md:h-[24rem]",
-  },
-  {
-    Icon: Droplets,
-    name: "Smart Solar Wash Controller",
-    description:
-      "Automatic solar panel cleaning system to improve efficiency and reduce manual effort without internet.",
-    href: "/product/solar-wash-controller",
-    cta: "View Details",
-    background: <div className="absolute inset-0 bg-white" />,
-    className: "h-auto min-h-[16rem] md:h-[24rem] md:col-span-2 lg:col-span-1",
-  },
-];
+  }));
 
 const feedback = [
   {
@@ -109,7 +106,12 @@ const Home = () => {
             tomorrow."
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div 
+          className={cn(
+            "grid grid-cols-2 gap-3 md:gap-8 max-w-7xl mx-auto",
+            features.length === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3"
+          )}
+        >
           {features.map((feature) => (
             <BentoCard key={feature.name} {...feature} />
           ))}

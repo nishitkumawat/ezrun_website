@@ -24,6 +24,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
+import { products } from "../data/products";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showIosDialog, setShowIosDialog] = useState(false);
@@ -31,9 +33,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Shutter Controller", path: "/product/shutter" },
-    // { name: 'Solar Monitoring', path: '/product/solar' },
-    { name: "Solar Washing", path: "/product/solar-wash-controller" },
+    { name: "Products", path: "/products" },
     { name: "Contact", path: "/contact" },
   ];
 

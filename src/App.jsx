@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import ShutterProduct from "./pages/ShutterProduct";
-import SolarProduct from "./pages/SolarProduct";
-import SolarWashController from "./pages/SolarWashController";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 import SolarWashManual from "./pages/SolarWashManual";
 import Contact from "./pages/Contact";
 import { Terms, Privacy, CustomBuildTerms } from "./pages/Legal";
@@ -20,12 +19,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product/shutter" element={<ShutterProduct />} />
-          <Route path="/product/solar" element={<SolarProduct />} />
-          <Route
-            path="/product/solar-wash-controller"
-            element={<SolarWashController />}
-          />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route
             path="/product/solar-wash-controller/manual"
             element={<SolarWashManual />}
