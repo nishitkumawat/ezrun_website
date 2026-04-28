@@ -11,6 +11,7 @@ import { Terms, Privacy, CustomBuildTerms } from "./pages/Legal";
 import IoTLandingPage from "./pages/IoTLandingPage";
 import AppDemo from "./pages/AppDemo";
 import ShutterAppDemo from "./pages/ShutterAppDemo";
+import MonitoringAppDemo from "./pages/MonitoringAppDemo";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           />
           <Route path="/iot" element={<IoTLandingPage />} />
           <Route path="/app-demo/solar" element={<AppDemo />} />
+          <Route path="/app-demo/solar-monitoring" element={<MonitoringAppDemo />} />
           <Route path="/app-demo/shutter" element={<ShutterAppDemo />} />
         </Routes>
       </Layout>

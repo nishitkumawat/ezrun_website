@@ -35,7 +35,7 @@ export const products = [
       whatsappMsg: "I am interested in the AI Based Solar monitoring and washing system. Please provide more details.",
       buttons: [
         { type: "inquiry", text: "Send Inquiry" },
-        { type: "app_demo", text: "Watch Demo", link: null }, // Watch demo handled differently in current SolarProduct, we'll map this. Wait, there was no app-demo for this link currently, it just says "Watch Demo".
+        { type: "app_demo", text: "App Demo", link: "/app-demo/solar-monitoring" },
       ]
     },
     sections: [
