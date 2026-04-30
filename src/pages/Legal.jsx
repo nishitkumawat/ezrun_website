@@ -25,6 +25,9 @@ export const Terms = () => (
       
       <h2 className="text-2xl font-bold border-b pb-2">4. Connectivity</h2>
       <p>Remote features require a stable 2.4GHz WiFi connection. EzRun is not responsible for service interruptions caused by third-party ISPs.</p>
+
+      <h2 className="text-2xl font-bold border-b pb-2">5. Shipping & Delivery</h2>
+      <p>Estimated delivery time for standard products is 7 days. However, delivery timelines are subject to stock availability and the performance of our courier partners. EzRun Automation is not liable for delays caused by third-party logistics providers.</p>
     </section>
   </LegalLayout>
 );

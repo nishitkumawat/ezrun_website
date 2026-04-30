@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { BackgroundPaths } from "@/components/ui/background-paths";
-import { ShieldCheck, ShoppingCart, Minus, Plus } from "lucide-react";
+import { ShieldCheck, ShoppingCart, Minus, Plus, Truck } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -396,8 +396,15 @@ const ProductDetails = () => {
         </section>
       </BackgroundPaths>
 
+      <div className="container mx-auto px-4 py-8 flex justify-center">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 text-[11px] font-bold text-primary/70 uppercase tracking-widest border border-primary/10 animate-fade-in">
+          <Truck className="w-3.5 h-3.5" />
+          <span>7 Days Fast Delivery</span>
+        </div>
+      </div>
       {/* Dynamic Sections */}
       {sections.map((section, idx) => renderSection(section, idx))}
+
 
       {/* Call to Action */}
       {cta && (
