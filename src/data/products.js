@@ -189,6 +189,7 @@ export const products = [
       buttons: [
         { type: "inquiry", text: "Send Inquiry" },
         { type: "manual", text: "Details", link: "/product/solar-wash-controller/manual" },
+        { type: "setup", text: "Setup Guide", link: "/setup" },
         { type: "app_demo", text: "Live App Demo", link: "/app-demo/solar" }
       ]
     },

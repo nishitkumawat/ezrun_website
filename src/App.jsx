@@ -12,6 +12,7 @@ import IoTLandingPage from "./pages/IoTLandingPage";
 import AppDemo from "./pages/AppDemo";
 import ShutterAppDemo from "./pages/ShutterAppDemo";
 import MonitoringAppDemo from "./pages/MonitoringAppDemo";
+import SetupGuide from "./pages/SetupGuide";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/app-demo/solar" element={<AppDemo />} />
           <Route path="/app-demo/solar-monitoring" element={<MonitoringAppDemo />} />
           <Route path="/app-demo/shutter" element={<ShutterAppDemo />} />
+          <Route path="/setup" element={<SetupGuide />} />
         </Routes>
       </Layout>
     </Router>
