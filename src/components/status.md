@@ -13,6 +13,6 @@ The following components are being integrated into the project. All code is conv
 ## Asset Paths
 
 - Shutter Image: `public/assets/shutter.png`
-- Solar Image: `public/assets/solar.jpeg`
+- Solar Image: `public/assets/solar2.png`
 - App Screenshot 1: `public/assets/app1.png`
 - App Screenshot 2: `public/assets/app2.png`
