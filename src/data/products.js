@@ -219,7 +219,7 @@ export const products = [
         "Automatic solar panel cleaning to maximize efficiency with zero manual effort.",
       priceAmount: "₹1,699",
       priceSuffix: "/ unit",
-      priceNote: "* Price negotiable to ₹1,399 for bulk orders",
+      priceNote: "* Price negotiable for bulk orders",
       priceBadge: "Bulk Discounts Available",
       image: "/assets/solar2.png",
       whatsappMsg:
