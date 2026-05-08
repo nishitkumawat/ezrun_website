@@ -231,7 +231,7 @@ export const products = [
           text: "Details",
           link: "/product/solar-wash-controller/manual",
         },
-        { type: "setup", text: "Setup Guide", link: "/setup" },
+        // { type: "setup", text: "Setup Guide", link: "/setup" },
         { type: "app_demo", text: "Live App Demo", link: "/app-demo/solar" },
       ],
     },
