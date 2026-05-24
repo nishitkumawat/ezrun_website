@@ -33,7 +33,7 @@ export const products = [
       priceSuffix: "+ Taxes",
       priceNote: "(Negotiable for bulk orders)",
       priceBadge: "",
-      image: "/assets/solar2.png",
+      image: "/assets/solar3.jpeg",
       whatsappMsg:
         "I am interested in the AI Based Solar monitoring and washing system. Please provide more details.",
       buttons: [
@@ -221,7 +221,7 @@ export const products = [
       priceSuffix: "/ unit",
       priceNote: "* Price negotiable for bulk orders",
       priceBadge: "Bulk Discounts Available",
-      image: "/assets/solar2.png",
+      image: "/assets/solar3.jpeg",
       whatsappMsg:
         "I am interested in the Smart Solar Panel Wash Controller. Please provide more details.",
       buttons: [
