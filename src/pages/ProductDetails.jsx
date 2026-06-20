@@ -33,8 +33,8 @@ const ProductDetails = () => {
 
   const { hero, sections, cta } = product;
 
-  const whatsappUrl = `https://wa.me/919974486076?text=${encodeURIComponent(
-    hero.whatsappMsg
+  const whatsappUrl = `https://wa.me/917069513411?text=${encodeURIComponent(
+    hero.whatsappMsg,
   )}`;
 
   const renderSection = (section, idx) => {
@@ -290,7 +290,10 @@ const ProductDetails = () => {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <Dialog open={isBuyModalOpen} onOpenChange={setIsBuyModalOpen}>
+                  <Dialog
+                    open={isBuyModalOpen}
+                    onOpenChange={setIsBuyModalOpen}
+                  >
                     <DialogTrigger asChild>
                       <InteractiveHoverButton
                         text="Buy Now"
@@ -353,10 +356,10 @@ const ProductDetails = () => {
                               hero.titlePrimary + " " + hero.titleSecondary
                             }. Quantity: ${quantity}`;
                             window.open(
-                              `https://wa.me/919974486076?text=${encodeURIComponent(
-                                msg
+                              `https://wa.me/917069513411?text=${encodeURIComponent(
+                                msg,
                               )}`,
-                              "_blank"
+                              "_blank",
                             );
                             setIsBuyModalOpen(false);
                           }}
@@ -371,7 +374,8 @@ const ProductDetails = () => {
                       text={hero.buttons[2].text}
                       className="flex-1 bg-[#102A43] text-white border-none font-semibold h-12 shadow-md hover:bg-[#102a43]/90"
                       onClick={() => {
-                        if (hero.buttons[2].link) navigate(hero.buttons[2].link);
+                        if (hero.buttons[2].link)
+                          navigate(hero.buttons[2].link);
                       }}
                     />
                   )}
@@ -404,7 +408,6 @@ const ProductDetails = () => {
       </div>
       {/* Dynamic Sections */}
       {sections.map((section, idx) => renderSection(section, idx))}
-
 
       {/* Call to Action */}
       {cta && (

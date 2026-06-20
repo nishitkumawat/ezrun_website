@@ -61,7 +61,13 @@ const CustomBuildForm = () => {
   };
 
   const handleWhatsApp = () => {
-    if (!formData.machineName || !formData.powerType || !formData.ratingI || !formData.ratingV || !formData.agreedToTerms) {
+    if (
+      !formData.machineName ||
+      !formData.powerType ||
+      !formData.ratingI ||
+      !formData.ratingV ||
+      !formData.agreedToTerms
+    ) {
       alert("Please fill all required fields and agree to the terms.");
       return;
     }
@@ -92,7 +98,7 @@ ${formData.extraRequirements || "None"}
 I agree to the terms and conditions.`;
 
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/919974486076?text=${encodedMessage}`, "_blank");
+    window.open(`https://wa.me/917069513411?text=${encodedMessage}`, "_blank");
   };
 
   const inputClass =
@@ -110,10 +116,12 @@ I agree to the terms and conditions.`;
           <h4 className="text-lg font-semibold text-primary flex items-center gap-2">
             <Zap className="w-5 h-5" /> Basic Machine Details
           </h4>
-          
+
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Type / Name of Machine *</label>
+              <label className="text-sm font-medium text-muted-foreground">
+                Type / Name of Machine *
+              </label>
               <input
                 type="text"
                 name="machineName"
@@ -125,7 +133,9 @@ I agree to the terms and conditions.`;
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Machine Link (Optional)</label>
+              <label className="text-sm font-medium text-muted-foreground">
+                Machine Link (Optional)
+              </label>
               <input
                 type="text"
                 name="machineLink"
@@ -137,10 +147,15 @@ I agree to the terms and conditions.`;
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Power Type *</label>
+              <label className="text-sm font-medium text-muted-foreground">
+                Power Type *
+              </label>
               <div className="flex gap-4 pt-2">
                 {["AC", "DC"].map((type) => (
-                  <label key={type} className="flex items-center gap-2 cursor-pointer font-medium text-foreground">
+                  <label
+                    key={type}
+                    className="flex items-center gap-2 cursor-pointer font-medium text-foreground"
+                  >
                     <input
                       type="radio"
                       name="powerType"
@@ -158,7 +173,9 @@ I agree to the terms and conditions.`;
 
           <div className="grid grid-cols-3 gap-3">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Current (I) *</label>
+              <label className="text-sm font-medium text-muted-foreground">
+                Current (I) *
+              </label>
               <input
                 type="text"
                 name="ratingI"
@@ -169,7 +186,9 @@ I agree to the terms and conditions.`;
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Voltage (V) *</label>
+              <label className="text-sm font-medium text-muted-foreground">
+                Voltage (V) *
+              </label>
               <input
                 type="text"
                 name="ratingV"
@@ -180,7 +199,9 @@ I agree to the terms and conditions.`;
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Power (W)</label>
+              <label className="text-sm font-medium text-muted-foreground">
+                Power (W)
+              </label>
               <input
                 type="text"
                 name="ratingW"
@@ -198,7 +219,7 @@ I agree to the terms and conditions.`;
           <h4 className="text-lg font-semibold text-primary flex items-center gap-2">
             <Shield className="w-5 h-5" /> Optional Hardware Features
           </h4>
-          
+
           <div className="space-y-3">
             <label className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg cursor-pointer hover:bg-primary/5 transition border border-border">
               <input
@@ -209,8 +230,13 @@ I agree to the terms and conditions.`;
                 className="mt-1 accent-orange-500 w-4 h-4"
               />
               <div>
-                <span className="font-semibold block text-foreground">Keypad Lock System (+ ₹100)</span>
-                <span className="text-xs text-muted-foreground">Device physically locked until password entered. Mobile control remains active.</span>
+                <span className="font-semibold block text-foreground">
+                  Keypad Lock System (+ ₹100)
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  Device physically locked until password entered. Mobile
+                  control remains active.
+                </span>
               </div>
             </label>
 
@@ -235,7 +261,9 @@ I agree to the terms and conditions.`;
                   onChange={handleInputChange}
                   className="accent-orange-500 w-4 h-4"
                 />
-                <span className="font-medium text-foreground">Waterproof Box (+ ₹200)</span>
+                <span className="font-medium text-foreground">
+                  Waterproof Box (+ ₹200)
+                </span>
               </label>
             </div>
           </div>
@@ -246,21 +274,25 @@ I agree to the terms and conditions.`;
           <h4 className="text-lg font-semibold text-primary flex items-center gap-2">
             <CheckCircle className="w-5 h-5" /> Buttons Required
           </h4>
-          
+
           {/* Fixed: use flex-col on mobile to prevent overflow */}
           <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="text"
               placeholder="Button Name (e.g. Start)"
               value={newButton.name}
-              onChange={(e) => setNewButton({ ...newButton, name: e.target.value })}
+              onChange={(e) =>
+                setNewButton({ ...newButton, name: e.target.value })
+              }
               className="flex-1 bg-white border border-border rounded-lg p-3 text-sm text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition"
             />
             <input
               type="text"
               placeholder="Working (e.g. Starts motor)"
               value={newButton.working}
-              onChange={(e) => setNewButton({ ...newButton, working: e.target.value })}
+              onChange={(e) =>
+                setNewButton({ ...newButton, working: e.target.value })
+              }
               className="flex-1 bg-white border border-border rounded-lg p-3 text-sm text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition"
             />
             <button
@@ -274,7 +306,10 @@ I agree to the terms and conditions.`;
 
           <div className="space-y-2">
             {formData.buttons.map((btn, idx) => (
-              <div key={idx} className="flex justify-between items-center bg-muted/30 p-3 rounded-lg border border-border">
+              <div
+                key={idx}
+                className="flex justify-between items-center bg-muted/30 p-3 rounded-lg border border-border"
+              >
                 <span className="text-sm text-foreground">
                   <strong>{btn.name}:</strong> {btn.working}
                 </span>
@@ -294,15 +329,34 @@ I agree to the terms and conditions.`;
           <h4 className="text-lg font-semibold text-primary flex items-center gap-2">
             <Wifi className="w-5 h-5" /> Platform Selection
           </h4>
-          
+
           <div className="space-y-3">
             {[
-              { value: "EZRUN", label: "EZRUN Platform (Default)", price: "Included" },
-              { value: "Own App", label: "Your Own App", price: "+ ₹20,000 / year" },
-              { value: "Own App (Managed)", label: "Your App on Our Cloud Server", price: "+ ₹65,000 / year" },
-              { value: "Own App (Own Server)", label: "Your App on Your Cloud Server", price: "+ ₹25,000 / year" },
+              {
+                value: "EZRUN",
+                label: "EZRUN Platform (Default)",
+                price: "Included",
+              },
+              {
+                value: "Own App",
+                label: "Your Own App",
+                price: "+ ₹20,000 / year",
+              },
+              {
+                value: "Own App (Managed)",
+                label: "Your App on Our Cloud Server",
+                price: "+ ₹65,000 / year",
+              },
+              {
+                value: "Own App (Own Server)",
+                label: "Your App on Your Cloud Server",
+                price: "+ ₹25,000 / year",
+              },
             ].map((option) => (
-              <label key={option.value} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg cursor-pointer hover:bg-primary/5 transition border border-border hover:border-primary/40">
+              <label
+                key={option.value}
+                className="flex items-center justify-between p-3 bg-muted/30 rounded-lg cursor-pointer hover:bg-primary/5 transition border border-border hover:border-primary/40"
+              >
                 <div className="flex items-center gap-3">
                   <input
                     type="radio"
@@ -312,20 +366,27 @@ I agree to the terms and conditions.`;
                     onChange={handleInputChange}
                     className="accent-orange-500 w-4 h-4"
                   />
-                  <span className="font-medium text-foreground">{option.label}</span>
+                  <span className="font-medium text-foreground">
+                    {option.label}
+                  </span>
                 </div>
-                <span className="text-sm font-bold text-primary">{option.price}</span>
+                <span className="text-sm font-bold text-primary">
+                  {option.price}
+                </span>
               </label>
             ))}
           </div>
           <p className="text-xs text-muted-foreground italic pl-1 pt-1">
-            * App customization may charge upto ₹5000 (If too much customization is done)
+            * App customization may charge upto ₹5000 (If too much customization
+            is done)
           </p>
         </div>
 
         {/* Extra Requirements */}
         <div className="space-y-2 pt-4 border-t border-border">
-          <label className="text-sm font-medium text-muted-foreground">Extra Requirements</label>
+          <label className="text-sm font-medium text-muted-foreground">
+            Extra Requirements
+          </label>
           <textarea
             name="extraRequirements"
             value={formData.extraRequirements}
@@ -343,9 +404,18 @@ I agree to the terms and conditions.`;
               <AlertCircle className="w-4 h-4" /> Important Information
             </h5>
             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-              <li>Minimum <strong className="text-foreground">20-25 pieces</strong> bulk order required for custom build.</li>
-              <li>Chargeable demo model provided before bulk order (Non-refundable).</li>
-              <li>Demo model is for testing only - not final product quality.</li>
+              <li>
+                Minimum{" "}
+                <strong className="text-foreground">20-25 pieces</strong> bulk
+                order required for custom build.
+              </li>
+              <li>
+                Chargeable demo model provided before bulk order
+                (Non-refundable).
+              </li>
+              <li>
+                Demo model is for testing only - not final product quality.
+              </li>
               <li>Opening enclosure may damage demo unit.</li>
             </ul>
           </div>
@@ -354,8 +424,10 @@ I agree to the terms and conditions.`;
               <Clock className="w-4 h-4" /> Service Policy
             </h5>
             <p className="text-sm text-muted-foreground">
-              If hardware purchases stop, included services continue for a <strong className="text-foreground">3-month grace period</strong> only. 
-              After that, a yearly subscription is mandatory to keep devices online.
+              If hardware purchases stop, included services continue for a{" "}
+              <strong className="text-foreground">3-month grace period</strong>{" "}
+              only. After that, a yearly subscription is mandatory to keep
+              devices online.
             </p>
           </div>
         </div>
@@ -371,7 +443,15 @@ I agree to the terms and conditions.`;
               className="accent-orange-500 w-4 h-4 rounded"
             />
             <span className="text-sm text-muted-foreground">
-              I agree to the <Link to="/legal/custom-build-terms" target="_blank" className="text-primary hover:underline font-semibold">Terms & Conditions</Link> *
+              I agree to the{" "}
+              <Link
+                to="/legal/custom-build-terms"
+                target="_blank"
+                className="text-primary hover:underline font-semibold"
+              >
+                Terms & Conditions
+              </Link>{" "}
+              *
             </span>
           </label>
 
@@ -559,7 +639,7 @@ const IoTLandingPage = () => {
             We convert your thoughts into real products. Tell us your
             requirements and get a solution within 24 hours!
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a
               href="#build-form"
@@ -576,7 +656,8 @@ const IoTLandingPage = () => {
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            ⚡ We respond within 24 hours &nbsp;•&nbsp; 🔒 100% Secure &nbsp;•&nbsp; 💰 Best Prices
+            ⚡ We respond within 24 hours &nbsp;•&nbsp; 🔒 100% Secure
+            &nbsp;•&nbsp; 💰 Best Prices
           </p>
         </div>
       </section>
@@ -587,14 +668,17 @@ const IoTLandingPage = () => {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-3">
               <div className="h-0.5 w-12 bg-primary" />
-              <span className="text-primary font-bold tracking-widest uppercase text-[10px]">Custom Build</span>
+              <span className="text-primary font-bold tracking-widest uppercase text-[10px]">
+                Custom Build
+              </span>
               <div className="h-0.5 w-12 bg-primary" />
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
               Turn Your Machines <span className="text-primary">Smart</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Fill out the details below to get a custom quote for your machine automation
+              Fill out the details below to get a custom quote for your machine
+              automation
             </p>
           </div>
           <CustomBuildForm />
@@ -619,8 +703,12 @@ const IoTLandingPage = () => {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
                   <feature.Icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -633,7 +721,9 @@ const IoTLandingPage = () => {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-3">
               <div className="h-0.5 w-12 bg-primary" />
-              <span className="text-primary font-bold tracking-widest uppercase text-[10px]">Products</span>
+              <span className="text-primary font-bold tracking-widest uppercase text-[10px]">
+                Products
+              </span>
               <div className="h-0.5 w-12 bg-primary" />
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
@@ -650,7 +740,9 @@ const IoTLandingPage = () => {
                 className="group rounded-2xl overflow-hidden bg-white border border-border hover:border-primary/40 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/10"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${product.accent} opacity-80`} />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${product.accent} opacity-80`}
+                  />
                   <img
                     src={product.image}
                     alt={product.name}
@@ -661,8 +753,12 @@ const IoTLandingPage = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-foreground">{product.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{product.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">
+                    {product.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {product.description}
+                  </p>
                   <div className="space-y-2">
                     {product.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm">
@@ -685,7 +781,9 @@ const IoTLandingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
               What Our <span className="text-primary">Clients Say</span>
             </h2>
-            <p className="text-muted-foreground text-sm">Trusted by businesses across India</p>
+            <p className="text-muted-foreground text-sm">
+              Trusted by businesses across India
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, idx) => (
@@ -699,18 +797,29 @@ const IoTLandingPage = () => {
                       {review.name.charAt(0)}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground">{review.name}</h4>
-                      <p className="text-xs text-muted-foreground">{review.location}</p>
+                      <h4 className="font-semibold text-foreground">
+                        {review.name}
+                      </h4>
+                      <p className="text-xs text-muted-foreground">
+                        {review.location}
+                      </p>
                     </div>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
                 </div>
-                <p className="text-muted-foreground italic text-sm mb-3">"{review.comment}"</p>
-                <p className="text-xs text-muted-foreground/60">{review.date}</p>
+                <p className="text-muted-foreground italic text-sm mb-3">
+                  "{review.comment}"
+                </p>
+                <p className="text-xs text-muted-foreground/60">
+                  {review.date}
+                </p>
               </div>
             ))}
           </div>
@@ -734,7 +843,9 @@ const IoTLandingPage = () => {
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="w-full p-5 flex justify-between items-center text-left hover:bg-primary/5 transition"
                 >
-                  <span className="font-semibold pr-4 text-foreground">{faq.q}</span>
+                  <span className="font-semibold pr-4 text-foreground">
+                    {faq.q}
+                  </span>
                   <ChevronDown
                     className={`w-5 h-5 text-primary transition-transform flex-shrink-0 ${
                       openFaq === idx ? "rotate-180" : ""

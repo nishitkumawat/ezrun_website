@@ -182,7 +182,7 @@ const Navbar = () => {
             <Button
               onClick={() =>
                 window.open(
-                  "https://wa.me/919974486076?text=I%20am%20interested%20in%20the%20Windows%20application%20for%20EzRun.",
+                  "https://wa.me/917069513411?text=I%20am%20interested%20in%20the%20Windows%20application%20for%20EzRun.",
                   "_blank",
                 )
               }

@@ -4,14 +4,14 @@ import { Mail, Phone, MapPin, MessageSquare, Clock, Globe } from "lucide-react";
 
 const Contact = () => {
   const whatsappUrl =
-    "https://wa.me/919974486076?text=I%20have%20an%20inquiry%20regarding%20EzRun%20Automation.";
+    "https://wa.me/917069513411?text=I%20have%20an%20inquiry%20regarding%20EzRun%20Automation.";
 
   const contactDetails = [
     {
       icon: Phone,
       label: "Call Us",
-      value: "+91 9974486076",
-      link: "tel:9974486076",
+      value: "+91 7069513411",
+      link: "tel:7069513411",
     },
     {
       icon: Mail,
