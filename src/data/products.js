@@ -109,7 +109,7 @@ export const products = [
         "Secure, robust, and smart automation for your industrial and residential shutters. Experience the perfect blend of physical security and mobile convenience.",
       descriptionMobile:
         "Secure & smart mobile automation for your rolling shutters.",
-      priceAmount: "₹3,000",
+      priceAmount: "₹2,999",
       priceSuffix: "+ Taxes",
       priceNote: "* Complete set with access points included.",
       priceBadge: "Standard Device",
